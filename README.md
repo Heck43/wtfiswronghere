@@ -1,42 +1,40 @@
-## Improve your Python by fixing errors
+# wtfiswronghere — исправленный fizzbuzz
 
-We present small code samples that have errors in them. Initially, there is only one error and it is relatively easy to spot. As we move up challenges, there are multiple errors and subtle bugs. 
+## что сделано
 
-### Why do this at all?
+мы прошли все 13 испытаний и исправили все ошибки, от простых синтаксических опечаток до более сложных логических и объектно-ориентированных багов. для каждого испытания был изменен код и написан отчет о проделанной работе в файлах ридми внутри папок челленджей.
 
-By working through these examples, we hope you get better at:
+### список исправлений:
+* **01_challenge**: исправили оператор присваивания `=` на сравнение `==` в условном операторе `elif i%num1==0:`.
+* **02_challenge**: добавили пропущенный обязательный аргумент `100` при вызове функции `fizzbuzz(100)`.
+* **03_challenge**: исправили передачу строкового аргумента `'16'` на целое число `100`, чтобы цикл `range` работал правильно.
+* **04_challenge**: исправили ошибку отступов (`IndentationError`) перед инструкцией `print` внутри блока `if`.
+* **05_challenge**: поправили имя открываемого файла с `mifile.txt` на `myfile.txt` и обновили синтаксис функции `print` для python 3 (обернули в скобки).
+* **06_challenge**: заменили обращение к несуществующей переменной `conf.num` на `conf.num2`.
+* **07_challenge**: исправили off-by-one ошибку, изменив вызов с `fizzbuzz(99)` на `fizzbuzz(100)`, чтобы диапазон включал число 99.
+* **08_challenge**: добавили обязательный аргумент `self` в метод класса `fizzbuzz(self, max_num)`.
+* **09_challenge**: исправили стартовое значение в `range(6, max_num)` на `range(1, max_num)`, чтобы не пропускать первые числа от 1 до 5.
+* **10_challenge**: исправили вызов самого модуля `fizzbuzz(100)` на вызов функции внутри него `fizzbuzz.fizzbuzz(100)`.
+* **11_challenge**: изменили порядок проверок в условной конструкции `if/elif`, переместив общую проверку на кратность 3 и 5 в самый верх, чтобы правильно выводилось `fizzbuzz`.
+* **12_challenge**: исправили значение переменной `self.num2` в конструкторе класса с `4` на `5` для классической логики fizzbuzz.
+* **13_challenge**: исправили сразу три ошибки — закрыли кавычку в объявлении строки, добавили двоеточие в цикле и исправили опечатку в имени вызываемой функции `fizzbuzzy` -> `fizzbuzz`.
 
-* reading errors
-* debugging
-* reading and editing other people's code 
-* Googling for specific issues
-* solving errors on your own
+## как исправляли
 
-### Motivation for creating this repository
+1. запускали скрипт из папки челленджа и смотрели на сообщение об ошибке.
+2. искали проблемное место в коде по номеру строки из стектрейса.
+3. анализировали причину (неправильный синтаксис, неверный тип данных, опечатки, логические ошибки).
+4. исправляли баг в коде и добавляли милые комментарии.
+5. документировали ошибку и ее решение в локальном readme-файле каждого челленджа.
 
-We noticed that people learning new programming languages lack some foundational skills like the ability to read errors, the knowledge to self-correct their own mistakes, the skill to limit their attention to only the relevant lines of code, etc. This repository is a collection of simple errors that beginners are likely to hit when they start to write Python code. Our idea is to present exercises in which beginners can experience errors and try to solve them on their own. 
+## как тестировали
 
-This repository has been created and maintained by [Qxf2 Services](https://www.qxf2.com/?utm_source=wftiswronghere&utm_medium=click&utm_campaign=From%20github). Qxf2 provides QA consultancy services for startups. If you found this repository useful, please let us know by giving us a star on GitHub.
-
-
-### How to use this repository
-We suggest you do the following
-
-1. [Fork](https://qxf2.com/blog/github-workflow-contributing-code-using-fork/) this repository
-2. In your terminal prompt (git bash, command prompt, etc.), navigate to each challenge directory (e.g.: `01_challenge`)
-3. Run the one Python script in the challenge directory (`python 01_challenge.py`)
-4. It should throw an error that reads similar to the `.png` in the challenge directory
-5. Fix the error and rerun
-6. If all goes good, you should see the output of running fizz buzz
-7. Once you fix the issue, update the readme file in the challenge directory (`01_readme.md`) with:
-
-    a. what part of the error message gave you a clue
-
-    b. how you set about solving the issue (e.g.: I Googled `XXXX` that didn't help me narrow down my problem. After that, I tried Googling `Python XXXX` and finally ended up Googling for `Python XXXX error`. Then I found a page that looked promising because `YYYY`. Much thanks to reddit user [/u/danielsgriffin](https://www.reddit.com/user/danielsgriffin) for this tip!)
-    
-    c. summarize what you learned. 
-
-8. Don't forget to commit your fixed code and updated readme
-9. __Pro tip:__ Once you are setup, try your best to timebox each exercise to no more than 10-minutes. We recommend this tip for even rank beginners who know nearly nothing about Python!   
-
-NOTE: To get the most out of these exercises, we think beginners should use an IDE (e.g.: Visual Studio Code), use git and use one git branch per challenge. These are peripheral habits to the main exercises but they will go a long way in making you more comfortable in working with code. 
+все тесты проводились вручную для каждого челленджа:
+1. запускали исправленный скрипт с помощью команды `python XX_challenge.py` (где `XX` — номер челленджа от 01 до 13).
+2. проверяли, что программа не выдает ошибок в терминале и успешно завершает работу.
+3. сверяли вывод программы с эталонным выводом fizzbuzz:
+   - для чисел, кратных 3, выводится `fizz`
+   - для чисел, кратных 5, выводится `buzz`
+   - для чисел, кратных и 3, и 5, выводится `fizzbuzz`
+   - проверялись все числа в диапазоне от 1 до 99 включительно.
+ 
