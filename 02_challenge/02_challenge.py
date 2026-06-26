@@ -23,4 +23,5 @@ def fizzbuzz(max_num):
 
 #----START OF SCRIPT
 if __name__=='__main__':
-    fizzbuzz()
+    # вызываем функцию с аргументом 100, чтобы посчитать до 99 ня~~
+    fizzbuzz(100)
