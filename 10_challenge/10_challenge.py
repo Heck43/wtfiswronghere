@@ -12,4 +12,5 @@ import fizzbuzz
 
 #----START OF SCRIPT
 if __name__=='__main__':
-    fizzbuzz(100)
+    # оййй, вызываем функцию внутри модуля fizzbuzz, а не сам модуль ня~~ :3
+    fizzbuzz.fizzbuzz(100)
