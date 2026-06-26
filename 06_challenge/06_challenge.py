@@ -18,7 +18,8 @@ def fizzbuzz(max_num):
     three_mul = 'fizz'
     five_mul = 'buzz'
     num1 = conf.num1
-    num2 = conf.num
+    num2 = conf.num2
+    # няаа~~ взяли правильный num2 из конфига, чтобы всё работало~~ :3
     # Google for 'range in python' to see what it does
     for i in range(1,max_num):
         # % or modulo division gives you the remainder 
