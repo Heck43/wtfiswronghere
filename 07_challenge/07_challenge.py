@@ -31,4 +31,5 @@ def fizzbuzz(max_num):
 
 #----START OF SCRIPT
 if __name__=='__main__':
-    fizzbuzz(99)
+    # оййй, тут мы передаем 100, чтобы в диапазон вошло число 99 ня~~
+    fizzbuzz(100)
